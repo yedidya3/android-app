@@ -21,7 +21,7 @@ Application installation instructions:
 3. Open a new project in Android Studio
   Minimum version Android 5
 4. Look for the src folder in the new project
-  Then replace the folder with the folder you downloaded
+  Then replace the folder src in project with folder named src that you found in section 2
 5.The app is now ready to use
 
 Operating instructions together with the flight simulator:
@@ -34,7 +34,7 @@ port - enter a port and remember it
 For example:
 --telent=socket,in,10,10.0.0.5,5000,tcp
 4.Click fly
-5.Enter the IP and port in the appropriate place in the application and click connect
+5.Launch our app and Enter the IP and port in the appropriate place in the application and click connect
 6. You can now use joystick
 and in the throttle as well as in the rudder for the purpose of flying the aircraft
 7.Have a nice flight.
