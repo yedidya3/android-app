@@ -12,11 +12,13 @@ import com.example.myapplication.model.Model;
 
 import java.io.IOException;
 import java.net.Socket;
-
+//An interface that has only one function
+//Of running
 interface OnJoysickChange {
     public void OnChange(double a , double e); // interface method (does not have a body)
 
 }
+//implements of OnJoysickChange
 class OnChangeImp implements OnJoysickChange{
 
     @Override
@@ -24,8 +26,8 @@ class OnChangeImp implements OnJoysickChange{
 
     }
 }
-
-
+//I used the internet to build the joystick
+//https://github.com/zerokol/JoystickView
 public class JoystickView extends View {
     public OnJoysickChange OnChange;
 

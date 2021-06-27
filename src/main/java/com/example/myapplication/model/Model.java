@@ -12,10 +12,13 @@ public class Model{
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
+    //Pool of threads to perform io operations
     private ExecutorService pool;
     public Model(){
         pool = Executors.newSingleThreadExecutor();
     }
+    //function to connect to flight gear
+    //The function implements the rubbable interface so you can run inside the threads pool
     public class RunnableStartConnection implements Runnable{
         String ip;
         int port;
@@ -39,6 +42,8 @@ public class Model{
             }
         }
     }
+    //send data to flight gear
+    //The function implements the rubbable interface so you can run inside the threads pool
     public class RunnableSendData implements Runnable{
         String data;
         public RunnableSendData(String data){
@@ -51,7 +56,7 @@ public class Model{
             }catch(Exception i){}
         }
     }
-
+    //start connection
     public void startConnection(String ip, int port) {
         int a = 2;
         pool.execute(new RunnableStartConnection(ip , port, this.clientSocket));
@@ -66,7 +71,7 @@ public class Model{
         }
         catch(IOException i){}
     }
-
+//function to send data
     public void changeAileron(String v){
         pool.execute(new RunnableSendData("set /controls/flight/aileron "+v+"\r\n"));
     }

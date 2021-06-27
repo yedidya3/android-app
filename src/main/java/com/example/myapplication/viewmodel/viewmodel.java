@@ -3,6 +3,7 @@ package com.example.myapplication.viewmodel;
 import com.example.myapplication.model.Model;
 
 public class viewmodel {
+    //The view model has functions that communicate with the model
     com.example.myapplication.model.Model model;
     public viewmodel(){
         this.model = new com.example.myapplication.model.Model();

@@ -16,14 +16,15 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Variables that are sent to viewmodel when they change
     String aileron;
     String elevator;
     String rudder;
     String throttle;
 
-
+    //the viewmodel
     com.example.myapplication.viewmodel.viewmodel viewmodel;
+    //seekbaars
     SeekBar sbRudder;
     SeekBar sbThrottle;
     public void connect(View view) {
@@ -42,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
         viewmodel = new com.example.myapplication.viewmodel.viewmodel();
         setContentView(R.layout.activity_main);
 
-
+        //the joystick
         JoystickView joy;
         joy = findViewById(R.id.joystickView);
-
+        //enter object of onchange to joystick
+        //the object on change Activates the function of what will happen when the joystick moves
+        //This is where the strategy pattern actually comes into play
        joy.setOnChange(new OnChangeImp(){
            @Override
            public void OnChange(double x, double y) {
@@ -62,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
         sbRudder = (SeekBar)findViewById(R.id.sbRudder);
         sbThrottle = (SeekBar)findViewById(R.id.sbThrottle);
 
-        //com.example.myapplication.viewmodel.viewmodel viewmodel = (com.example.myapplication.viewmodel.viewmodel)findViewById((R.id.viewmodel));
-        sbRudder.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
+         sbRudder.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            //We want the seek bar to be in the middle in 0 mode so we are making such changes
+             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 float progressFloat;
                 if((float)progress >=1000000) {
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+         //What happens when the seekbar moves
         sbThrottle.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
