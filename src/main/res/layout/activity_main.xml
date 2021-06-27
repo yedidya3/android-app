@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".view.MainActivity">
+
+
+        <EditText
+            android:id="@+id/etIP"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:ems="10"
+            android:hint="IP"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/purple_200"
+            android:ems="10"
+            android:hint="Port"
+            android:inputType="textPersonName"
+            android:textColor="#FAF6F6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etIP" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="connect"
+            android:text="Connect"
+            app:backgroundTint="#3CB641"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPort" />
+
+
+        <SeekBar
+            android:id="@+id/sbRudder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#E91E63"
+            android:max="2000000"
+            android:min="0"
+            android:progress="1000000"
+            android:rotation="180"
+            android:rotationX="0"
+            android:rotationY="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRudder" />
+
+
+        <com.example.myapplication.view.JoystickView
+            android:id="@+id/joystickView"
+            android:layout_width="250dp"
+            android:layout_height="242dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sbRudder" />
+
+        <TextView
+            android:id="@+id/tvRudder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#E91E63"
+            android:text="Rudder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
+
+        <TextView
+            android:id="@+id/tvThrottle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#FFC107"
+            android:text="Throttle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sbRudder" />
+
+        <SeekBar
+            android:id="@+id/sbThrottle"
+            android:layout_width="245dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="211dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginBottom="312dp"
+            android:background="?android:attr/colorPressedHighlight"
+            android:max="1000000"
+            android:min="0"
+            android:progress="0"
+            android:rotation="-270"
+            android:rotationX="0"
+            android:rotationY="0"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/joystickView"
+            app:layout_constraintVertical_bias="0.669" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="419dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
