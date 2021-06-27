@@ -17,7 +17,7 @@ Note The app is designed to work with the flight gear flight simulator.
 
 Application installation instructions:
 1. Download the files from github
-2. Extract a chicory that meets the name src
+2. Extract the files and select the folder named src
 3. Open a new project in Android Studio
   Minimum version Android 5
 4. Look for the src folder in the new project
